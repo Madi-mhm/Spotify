@@ -1,0 +1,65 @@
+.detailsPageContainer{
+    padding: 4rem 2rem 0 2rem;
+    background-color: rgb(23, 23, 23);
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media (min-width: 840px) {
+        padding-top: 5.3rem;   
+    }
+
+    .detailsIconsContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+            .detailsIcons{
+                font-size: 25px;
+            }
+        
+    }
+
+    .songsDetails{
+        padding: 1rem 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .detailsPageImage{
+            width: 10rem;
+            height: 10rem;
+            background-color: antiquewhite;
+            border-radius: 5px;
+        }
+
+        .detailsPageNameAndDescription{
+            margin-top: 2rem;
+            text-align: center;
+            width: 15rem;
+
+            h3{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .detailsPageLikesAndduration{
+            display: flex;
+            flex-direction: column;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .detailsPagePlayButton{
+            font-size: 40px;
+            margin-top: 1.5rem;
+            color: rgb(57, 199, 57);
+        }
+    }
+}

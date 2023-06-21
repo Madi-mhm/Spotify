@@ -1,6 +1,7 @@
 import './page.scss'
 import Header from './Header/Header'
 import BigCards from './Cards/BigCards'
+import Details from './PageDetails/Details'
 
 
 export default function Home() {
@@ -10,9 +11,10 @@ export default function Home() {
     <html>
       <Header></Header>
 
-      <div className='homePageContainer'>
+      {/* <div className='homePageContainer'>
         <BigCards></BigCards>
-      </div> 
+      </div>  */}
+      <Details></Details>
 
     </html>
   )
