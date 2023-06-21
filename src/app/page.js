@@ -1,7 +1,7 @@
 import './page.scss'
-import Header from './Header/Header'
-import BigCards from './Cards/BigCards'
-import Details from './PageDetails/Details'
+import Header from '../components/Header/Header'
+import BigCards from '../components/Cards/BigCards'
+import Details from '../PageDetails/Details'
 
 
 export default function Home() {
@@ -11,10 +11,22 @@ export default function Home() {
     <html>
       <Header></Header>
 
-      {/* <div className='homePageContainer'>
-        <BigCards></BigCards>
-      </div>  */}
-      <Details></Details>
+      <div className='homePageContainer'>
+        
+        <div className='homePageCarouselContainer'>
+          <h3>name of carousel</h3>
+          <div className='homePageCarousel'>
+          <BigCards></BigCards>
+          </div>
+        </div>
+        
+        <div className='homePageCarouselContainer'>
+          <h3>name of carousel</h3>
+          <div className='homePageCarousel'>
+          <BigCards></BigCards>
+          </div>
+        </div>
+      </div> 
 
     </html>
   )

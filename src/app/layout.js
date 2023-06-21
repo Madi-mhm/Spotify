@@ -11,7 +11,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <Home></Home>
-
+      <Home/>
   )
 }

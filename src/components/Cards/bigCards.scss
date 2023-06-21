@@ -1,6 +1,6 @@
 .cardContainer{
-    width: 11rem;
-    height: 15rem;
+    min-width: 9rem;
+    height: 13rem;
     background-color: rgb(18, 18, 18);
     border-radius: 5px;
 
@@ -12,7 +12,7 @@
         justify-content: center;
 
         .cardImage{
-            background-color: aqua;
+            background-color: rgb(26, 77, 18);
             width: 90%;
             height: 90%;
         }
@@ -35,9 +35,14 @@
 
     @media (min-width: 900px) {
         width: 13rem;
-        height: 19rem;
-        
+        height: 15rem;
     }
+
+    @media (min-width: 1300px) {
+        width: 13rem;
+        height: 19rem;
+    }
+
 
    
 
