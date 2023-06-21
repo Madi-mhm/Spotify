@@ -2,6 +2,7 @@ import './page.scss'
 import Header from '../components/Header/Header'
 import BigCards from '../components/Cards/BigCards'
 import Details from '../PageDetails/Details'
+import Footer from '@/components/Footer/Footer'
 
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
           </div>
         </div>
       </div> 
+
+      <Footer/>
 
     </html>
   )
