@@ -1,6 +1,6 @@
 .cardContainer{
     width: 9rem;
-    height: 13rem;
+    height: 12rem;
     background-color: rgb(18, 18, 18);
     border-radius: 5px;
 
@@ -41,10 +41,12 @@
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                margin-top: 7px;
             }
 
             p{
                 font-size: 12px;
+                margin-top: 1rem;
             }
         }
     }

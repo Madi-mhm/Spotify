@@ -16,9 +16,7 @@ const Home = () =>  {
         <div className='homePageCarouselContainer'>
           <h3>name of carousel</h3>
           <div className='homePageCarousel'>
-            
             <NewReleasesSection />
-
           </div>
 
         </div>
