@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import API_NewReleases from '../../api/API_NewReleases';
+import React from 'react';
 import BigCards from '../Cards/BigCards';
+import fetchSpotifyApi from '@/api/api';
 
-const NewReleasesSection = () => {
-  const [newData, setNewData] = useState();
+const NewReleasesSection = async () => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await API_NewReleases();
-      setNewData(result);
-    };
+  const apiData =  await fetchSpotifyApi('browse/new-releases?country=US&offset=0');
 
-    fetchData();
-  }, []);
 
-  return (
+  
+  
+
+  return ( 
     <div>
-      {newData.map((item) => (
-          <BigCards key={item.id} name={item.name} />
+      {apiData?.albums.items.map((item) => (
+          <BigCards name={item.name} />
         ))}
     </div>
   );
