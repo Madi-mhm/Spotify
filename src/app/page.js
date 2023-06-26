@@ -12,13 +12,19 @@ const Home = () =>  {
     <>
       <Header />
       <div className='homePageContainer'>
-        
+
+        <h3>New Releases </h3>
         <div className='homePageCarouselContainer'>
-          <h3>name of carousel</h3>
           <div className='homePageCarousel'>
             <NewReleasesSection />
           </div>
+        </div>
 
+        <h3>New Releases </h3>
+        <div className='homePageCarouselContainer'>
+          <div className='homePageCarousel'>
+            <NewReleasesSection />
+          </div>
         </div>
 
       </div> 
