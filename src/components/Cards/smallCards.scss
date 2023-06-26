@@ -1,0 +1,15 @@
+.smallCards{
+    display: flex;
+    align-items: center;
+    padding: 5px 1rem;
+
+    .smallCardsImage{
+        background-color: rgb(200, 174, 173);
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .smallCardsInfo{
+        margin-left: 1rem;
+    }
+}

@@ -1,0 +1,84 @@
+.searchMainPage{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(23, 23, 23, 0.927);
+
+    .searchPage{
+        
+    
+        *{
+            color: white;
+        }
+    
+    
+        .searchSection{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 10px;
+            height: 5rem;
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.425);
+            
+    
+            p{
+                font-size: 25px;
+            }
+    
+            input{
+                height: 2.5rem;
+                width: 80%;
+                padding: 0 10px;
+                outline: white;
+            }
+    
+            span{
+                font-size: 30px;
+            }
+    
+        }
+    
+        .artistProfile{
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+    
+            .artistprofilePic{
+                width: 4rem;
+                height: 4rem;
+                background-color: yellow;
+                border-radius: 50%;
+            }
+    
+            h5{
+                margin-left: 1rem;
+            }
+    
+        }         
+    }
+
+    @media (min-width: 680px ) {
+        display: flex;
+        justify-content: center;
+
+        .searchPage{
+            width: 80%;           
+        }   
+    }
+
+    @media (min-width: 900px ) {
+
+        .searchPage{
+            width: 70%;           
+        }   
+    }
+
+    @media (min-width: 1200px ) {
+
+        .searchPage{
+            width: 50%;           
+        }   
+    }
+
+}
