@@ -24,6 +24,7 @@
     
             p{
                 font-size: 25px;
+                cursor: pointer;
             }
     
             input{
@@ -31,31 +32,18 @@
                 width: 80%;
                 padding: 0 10px;
                 outline: white;
+                color: black;
+                font-size: 15px;
             }
     
             span{
                 font-size: 30px;
+                cursor: pointer;
             }
     
         }
     
-        .artistProfile{
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-    
-            .artistprofilePic{
-                width: 4rem;
-                height: 4rem;
-                background-color: yellow;
-                border-radius: 50%;
-            }
-    
-            h5{
-                margin-left: 1rem;
-            }
-    
-        }         
+        
     }
 
     @media (min-width: 680px ) {

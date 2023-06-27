@@ -6,7 +6,7 @@ const Header = () => {
         <div className='headerContainer'>
             <div className='headerLogo'>LOGO</div>
             <div className='headerNavBar'>
-                <div className='searchIcon'></div>
+                <a href='./search'><div className='searchIcon'></div></a>
                 <div className='hamburgerIcon'></div>
                 <a className='navBarLinks' href="#">Favorites</a>
                 <a className='navBarLinks' href="#">Log in</a>

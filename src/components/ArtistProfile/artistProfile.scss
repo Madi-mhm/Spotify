@@ -1,0 +1,28 @@
+.artistProfile{
+    
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    .artistprofilePic{
+        width: 4rem;
+        height: 4rem;
+        background-color: yellow;
+        border-radius: 50%;
+    }
+
+    .artistProfileInofs{
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        
+        *{
+            margin: 3px 0;
+        }      
+    
+        p{
+            font-size: 12px;
+        }
+    }
+
+}         
