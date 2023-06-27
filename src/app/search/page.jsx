@@ -6,6 +6,8 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import SmallCards from '@/components/Cards/SmallCards';
 import ArtistProfile from '@/components/ArtistProfile/ArtistProfile';
 import { useState } from 'react';
+import fetchSpotifyApi, { getSpotifyAuthToken } from '@/api/api';
+// import { errorToJSON } from 'next/dist/server/render';
 
 
 const SearchPage = () =>{
@@ -16,9 +18,28 @@ const SearchPage = () =>{
         setSearch(event.target.value)
     }
 
-    const handleSearchButton = () =>{
+    const handleSearchButton = async () =>{
         console.log(search)
-    }
+
+        // var artistID = await fetchSpotifyApi(`search?q=${search}&type=artist`)
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+
+    }   
+
+    // const handleSearchButton = async () =>{
+    //     try {
+    //         // const token = await getSpotifyAuthToken();
+    //         const url = `search?q=${search}&type=artist`
+    //         const artistData = await fetchSpotifyApi(url)
+            
+    //         console.log(artistData)
+    //     }catch{
+    //         console.error(error)
+    //         console.log("hey")
+    //     }
+
+    // }   
 
     return (
         <main className='searchMainPage'>
