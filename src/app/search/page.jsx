@@ -3,43 +3,30 @@
 import './page.scss'
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import SmallCards from '@/components/Cards/SmallCards';
-import ArtistProfile from '@/components/ArtistProfile/ArtistProfile';
 import { useState } from 'react';
-import fetchSpotifyApi, { getSpotifyAuthToken } from '@/api/api';
-// import { errorToJSON } from 'next/dist/server/render';
+import { fetchClientSpotifyApi, getSpotifyAuthToken } from '@/api/api';
 
 
 const SearchPage = () =>{
-
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState("pitbull")
 
     const handleSearchInput = (event)=>{
         setSearch(event.target.value)
     }
 
-    const handleSearchButton = async () =>{
-        console.log(search)
+    const handleSearchButton = async (event) =>{
+        event.preventDefault();
 
-        // var artistID = await fetchSpotifyApi(`search?q=${search}&type=artist`)
-        // .then(response => response.json())
-        // .then(data => console.log(data))
+        const data = async () =>{
+        const token = await getSpotifyAuthToken()
+        const searchData = await fetchClientSpotifyApi(`search?q=${search}&type=album%2Cplaylist%2Cartist&market=fr&limit=25&offset=0`, token);
+        
+        console.log(searchData);
 
-    }   
+        }
+        data()
+    }
 
-    // const handleSearchButton = async () =>{
-    //     try {
-    //         // const token = await getSpotifyAuthToken();
-    //         const url = `search?q=${search}&type=artist`
-    //         const artistData = await fetchSpotifyApi(url)
-            
-    //         console.log(artistData)
-    //     }catch{
-    //         console.error(error)
-    //         console.log("hey")
-    //     }
-
-    // }   
 
     return (
         <main className='searchMainPage'>
@@ -59,13 +46,6 @@ export default SearchPage
 
 
 
-//     const handleSearch = () =>{
-//         const filteredData = data.people.filter((item)=>{
-//             return item.name.includes(search)
-//         })
-
-//         console.log(filteredData)
-//     }
 
 
 
