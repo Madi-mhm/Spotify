@@ -1,15 +1,23 @@
 import './smallCards.scss'
+import { AiFillPlayCircle } from "react-icons/ai";
 
-const SmallCards = () =>{
+
+const SmallCards = ({songsName, artistsName, image }) =>{
 
     return(
 
         <div className="smallCards">
-            <div className="smallCardsImage"></div>
-            <div className="smallCardsInfo">
-                <h5>Name of song</h5>
-                <p>name of artist</p>
+            <div className='leftSide'>
+            <div className="smallCardsImage">
+                <img src={image} />
             </div>
+            <div className="smallCardsInfo">
+                <h5>{songsName}</h5>
+                <p>{artistsName}</p>
+            </div>
+            
+            </div >
+            <div className="rightSide"><AiFillPlayCircle/></div>
         </div>
     )
 }

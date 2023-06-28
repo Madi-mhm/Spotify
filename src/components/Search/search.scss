@@ -48,7 +48,7 @@
     }
     
     .homePageContainer{
-        padding: 0 2rem 5rem 2rem;
+        padding: 0 2rem 1rem 2rem;
         color: white;
         width: 100%;
         display: flex;
@@ -92,6 +92,12 @@
           
         
     }
+
+    .ArtistsTracksContinaire{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
         
     
@@ -104,6 +110,10 @@
             width: 80%;     
            
         }   
+
+        .homePageContainer{
+            width: 90%;
+        }
     }
 
     @media (min-width: 900px ) {
@@ -111,6 +121,9 @@
         .searchPage{
             width: 70%;           
         }   
+        .homePageContainer{
+            width: 80%;
+        }
     }
 
     @media (min-width: 1200px ) {
@@ -118,6 +131,9 @@
         .searchPage{
             width: 50%;           
         }   
+        .homePageContainer{
+            width: 70%;
+        }
     }
 
 

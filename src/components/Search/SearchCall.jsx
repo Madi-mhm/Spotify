@@ -7,30 +7,42 @@ import { fetchClientSpotifyApi, getSpotifyAuthToken } from '@/api/api';
 import './search.scss'
 import ArtistProfile from "../ArtistProfile/ArtistProfile";
 import BigCards from "../Cards/BigCards";
+import SmallCards from "../Cards/SmallCards";
 
 
 const SearchCall = ({token}) =>{
     const [search, setSearch] = useState("")
     const [searchedData, setSearchedData] = useState();
+    const [artistsTopTracks, setArtistsTopTracks] = useState();
 
     const handleSearchInput = (event)=>{
         setSearch(event.target.value)
     }
 
-    const handleSearchButton = async (event) =>{
-        event.preventDefault();
+    const handleSearchButton = async () =>{
 
+        // get albums and aritists
         const data = async () =>{
-            
             const searchData = await fetchClientSpotifyApi(`search?q=${search}&type=album%2Cplaylist%2Cartist&market=fr&limit=25&offset=0`, token);
             return searchData
         };
-
         const searchedData = await data()
         setSearchedData(searchedData)
+
+        // Get artists top tracks
+        const getTrack = async () =>{
+            const artistsID = searchedData.artists.items[0].id 
+            const getArtistTopTrack = await fetchClientSpotifyApi(`artists/${artistsID}/top-tracks?market=us`, token)
+            return getArtistTopTrack
+        };
+        const artistsTopTrack = await getTrack()
+        setArtistsTopTracks(artistsTopTrack)
     }
-    console.log(searchedData)
+
+    console.log(artistsTopTracks)
+
     
+
     return (
         <main className='searchMainPage'>
             <div className="searchPage">
@@ -46,20 +58,32 @@ const SearchCall = ({token}) =>{
             )}  
             
             <div className='homePageContainer'>
-                
                 <div className='homePageCarouselContainer'>
-                
                   <div className='homePageCarousel'>
-                
                     {searchedData && searchedData.albums.items.length > 0 && searchedData.albums.items.map(item =>( 
-                        <BigCards name={item.name} type={item.type} imageUrl={item.images[1].url} key={item.id}/>
+                        <BigCards 
+                            name={item.name} 
+                            type={item.type} 
+                            imageUrl={item.images[1].url} 
+                            key={item.id}
+                        />
                     ))}  
-    
                   </div>
-                    
                 </div>
-                    
             </div> 
+
+            <div className="ArtistsTracksContinaire">
+
+                {artistsTopTracks && artistsTopTracks.tracks.map(item =>( 
+                    <SmallCards 
+                        key={item.id} 
+                        songsName={item.album && item.album.name} 
+                        artistsName={item.artists[0] && item.artists[0].name} 
+                        image={item.album && item.album.images[1] && item.album.images[1].url}
+                    />
+                ))}
+
+            </div>
             
 
 
