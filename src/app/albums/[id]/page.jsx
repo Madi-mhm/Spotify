@@ -1,7 +1,9 @@
 import fetchSpotifyApi from '@/api/api';
 import Details from '@/components/PageDetails/Details';
+import useSearchParams from 'next/navigation'
 
 export default async function AlbumPage({ params }) {
+
   const albumId = params.id; // Access the album ID using the 'id' key
 
   const thisAlbum = await fetchSpotifyApi(`albums/${albumId}`);

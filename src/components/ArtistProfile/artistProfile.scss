@@ -9,19 +9,27 @@
         height: 4rem;
         background-color: yellow;
         border-radius: 50%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
     }
 
     .artistProfileInofs{
         display: flex;
         flex-direction: column;
         margin-left: 1rem;
-        
+        color: white;
+
         *{
             margin: 3px 0;
         }      
     
         p{
-            font-size: 12px;
+            font-size: 10px;
+            
         }
     }
 
