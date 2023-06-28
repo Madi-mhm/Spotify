@@ -37,6 +37,12 @@
             height: 10rem;
             background-color: antiquewhite;
             border-radius: 5px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
         }
 
         .detailsPageNameAndDescription{
@@ -46,6 +52,10 @@
 
             h3{
                 margin-bottom: 1rem;
+                font-size: 18px;
+            }
+            p{
+                margin-top: 5px;
             }
         }
 
@@ -57,9 +67,10 @@
         }
 
         .detailsPagePlayButton{
-            font-size: 40px;
-            margin-top: 1.5rem;
+            font-size: 55px;
+            margin-top: 1rem;
             color: rgb(57, 199, 57);
+
         }
     }
 }

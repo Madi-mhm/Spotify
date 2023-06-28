@@ -3,7 +3,7 @@ import './bigCards.scss'
 
 const BigCards = ({name, imageUrl, type, date, albumId}) => {
     return(
-        <Link href={`/album/${albumId}`} className='cardLinkContainer'>
+        <Link href={`/details/${albumId}`} className='cardLinkContainer'>
         <div className='cardContainer'>
             <div className='cardImageContainer'>
                 <div className='cardImage'>
