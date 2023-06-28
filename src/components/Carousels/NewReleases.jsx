@@ -16,7 +16,7 @@ const NewReleasesSection = async () => {
               imageUrl = i.url;
               return null;
             })}
-            <BigCards name={item.name} imageUrl={imageUrl} type={item.type} />
+            <BigCards name={item.name} imageUrl={imageUrl} type={item.type} albumId={item.id} />
           </React.Fragment>
         );
         

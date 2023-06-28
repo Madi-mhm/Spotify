@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import './bigCards.scss'
 
-const BigCards = ({name, imageUrl, type}) => {
+const BigCards = ({name, imageUrl, type, albumId}) => {
     return(
-        <>
+        <Link href={`/album/${albumId}`} className='cardLinkContainer'>
         <div className='cardContainer'>
             <div className='cardImageContainer'>
                 <div className='cardImage'>
@@ -16,7 +17,7 @@ const BigCards = ({name, imageUrl, type}) => {
                 </div>
             </div>
         </div>
-</>
+        </Link>
     )
 }
 
