@@ -39,9 +39,6 @@ const SearchCall = ({token}) =>{
         setArtistsTopTracks(artistsTopTrack)
     }
 
-
-    
-
     return (
         <main className='searchMainPage'>
             <div className="searchPage">
@@ -64,6 +61,7 @@ const SearchCall = ({token}) =>{
                             name={item.name} 
                             type={item.type} 
                             imageUrl={item.images[1].url} 
+                            date={item.release_date}
                             key={item.id}
                         />
                     ))}  

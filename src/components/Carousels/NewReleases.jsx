@@ -6,14 +6,6 @@ import './newReleases.scss'
 const NewReleasesSection = async () => {
   const apiData = await fetchSpotifyApi('browse/new-releases?country=US&offset=0');
 
-
-  // const imageURL = apiData.albums.items.map((item)=>{
-  //   return item.images[0]
-  // })
-  // console.log(imageURL);
- 
-
-
   return (
     <div className='carouselCountainer'>
       {apiData?.albums.items.map((item) => {
@@ -28,7 +20,7 @@ const NewReleasesSection = async () => {
 
         return (
           <React.Fragment key={item.id}>
-            <BigCards name={item.name} imageUrl={imageUrl} type={item.type} albumId={item.id} />
+            <BigCards name={item.name} imageUrl={imageUrl} type={item.type} date={item.release_date} albumId={item.id} />
           </React.Fragment>
         );
         
