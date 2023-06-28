@@ -36,17 +36,9 @@
         
     }
       
-    .homePageCarouselContainer::-webkit-scrollbar-track {
-        background-color: rgb(23, 23, 23);
-    }
-      
     .homePageCarouselContainer::-webkit-scrollbar-thumb {
-        background-color: #313030;
         border-radius: 10px;
     }
       
-    .homePageCarouselContainer::-webkit-scrollbar-thumb:hover {
-        background-color: #555; 
-    }
-
+   
 }

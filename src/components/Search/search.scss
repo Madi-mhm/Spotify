@@ -2,10 +2,11 @@
     width: 100%;
     min-height: 100vh;
     background-color: rgba(23, 23, 23, 0.927);
+    display: flex;
+    flex-direction: column;
 
     .searchPage{
         
-    
         *{
             color: white;
         }
@@ -45,13 +46,63 @@
     
         
     }
-
-    @media (min-width: 680px ) {
+    
+    .homePageContainer{
+        padding: 0 2rem 5rem 2rem;
+        color: white;
+        width: 100%;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    
+        
+    
+        @media (min-width: 840px) {
+            padding-top: 2rem;   
+
+        }
+    
+        h3{
+            margin: 1.5rem 0rem 0rem 1rem;
+            margin-right: auto;
+        }
+    
+        .homePageCarouselContainer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow: scroll;
+            overflow-y: hidden;
+    
+            .homePageCarousel{
+                display: flex;
+                gap: 3px;
+
+            }
+        }
+    
+        .homePageCarouselContainer::-webkit-scrollbar {
+            width: 8px; 
+            
+        }          
+        .homePageCarouselContainer::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+        }
+          
+        
+    }
+    
+        
+    
+
+    @media (min-width: 680px ) {
+        display: flex;      
+        align-items: center;
 
         .searchPage{
-            width: 80%;           
+            width: 80%;     
+           
         }   
     }
 
@@ -68,5 +119,8 @@
             width: 50%;           
         }   
     }
+
+
+   
 
 }
