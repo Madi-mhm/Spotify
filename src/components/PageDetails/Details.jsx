@@ -37,7 +37,8 @@ const Details = (
 
     
     return(
-        
+        <>
+        <Header/>
         <div className='detailsPageContainer'>
             <div className='detailsIconsContainer'>
                 <div className='detailsIcons'><BiShareAlt/></div>
@@ -74,6 +75,7 @@ const Details = (
             </div>
 
         </div>
+        </>
 
     )
 }

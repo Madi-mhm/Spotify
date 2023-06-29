@@ -1,15 +1,16 @@
 import './header.modules.scss'
+import Link from 'next/link'
 
 const Header = () => {
 
     return(
         <div className='headerContainer'>
-            <div className='headerLogo'>LOGO</div>
+            <Link className='headerLogo' href="/" >LOGO</Link>
             <div className='headerNavBar'>
-                <a href='./search'><div className='searchIcon'></div></a>
+                <Link href='/search'><div className='searchIcon'></div></Link>
                 <div className='hamburgerIcon'></div>
-                <a className='navBarLinks' href="#">Favorites</a>
-                <a className='navBarLinks' href="#">Log in</a>
+                <Link className='navBarLinks' href="#">Favorites</Link>
+                <Link className='navBarLinks' href="#">Log in</Link>
             </div>
         </div>
       
