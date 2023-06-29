@@ -9,7 +9,6 @@ import SmallCards from '../Cards/SmallCards';
 import { useEffect, useState } from 'react';
 
 
-
 const Details = (
 
     {title,
@@ -17,12 +16,26 @@ const Details = (
     artistName,
     releaseDate,
     tracks,
+    topTracks,
     // artistImageUrl,
     // tracks,
 }
     ) =>{       
         
+    const [songNames, setSongNames] = useState()
 
+    const getTracks = songNames?.tracks || []
+    useEffect(()=>{
+        if(getTracks){
+            setSongNames(topTracks)
+        }
+    }, [topTracks])
+
+    const tracksData = getTracks.map(item => {
+        return item
+    })
+
+    
     return(
         
         <div className='detailsPageContainer'>
@@ -46,8 +59,18 @@ const Details = (
                  <AiFillPlayCircle/>
                 </div>
             </div>
+
             <div className='albumsSongs'>
-               
+                {tracksData &&
+                    tracksData.map((item) => (
+                        <SmallCards
+                            key={item.id}
+                            songsName={item.name}
+                            artistsName={item.artists[0].name}
+                            image={item.album.images[1].url}
+                        />                    
+                    ))
+                }
             </div>
 
         </div>
