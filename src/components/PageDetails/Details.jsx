@@ -17,8 +17,6 @@ const Details = (
     releaseDate,
     tracks,
     topTracks,
-    // artistImageUrl,
-    // tracks,
 }
     ) =>{       
         

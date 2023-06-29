@@ -69,6 +69,7 @@ const SearchCall = ({token}) =>{
                             imageUrl={item.images[1].url} 
                             date={item.release_date}
                             key={item.id}
+                            albumId={item.id}
                         />
                     ))}  
                   </div>
