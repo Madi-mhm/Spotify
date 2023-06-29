@@ -19,6 +19,12 @@ const SearchCall = ({token}) =>{
         setSearch(event.target.value)
     }
 
+    const handleKeyDown = (event) => {
+        if(search !== "" && event.keyCode === 13){
+            handleSearchButton();
+        }
+    }
+
     const handleSearchButton = async () =>{
 
         // get albums and aritists
@@ -44,7 +50,7 @@ const SearchCall = ({token}) =>{
             <div className="searchPage">
                 <div className="searchSection">
                     <a href='./'><AiOutlineArrowLeft/></a>
-                    <input type="text" placeholder="search your artist..." onChange={handleSearchInput}/>
+                    <input type="text" placeholder="search your artist..." onChange={handleSearchInput} onKeyDown={handleKeyDown}/>
                     <span onClick={handleSearchButton}><BiSearch/></span>
 
                 </div>
