@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spotify API Project
+
+This is a Next.js/React.js project that utilizes the Spotify API to create a music application. The application allows users to search for artists, view artist details and add/remove tracks from their favorites. Please note that the data is not persisted and will be cleared upon page reload.
 
 ## Getting Started
 
@@ -16,19 +18,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Table of Contents
+- [Spotify API](#spotify-api)
+- [Functionalities](#functionalities)
+- [Technical Specifications](#technical-specifications)
 
-## Learn More
+## Spotify API
+🌐 Visit [https://developer.spotify.com/](https://developer.spotify.com/) to access the Spotify API.
 
-To learn more about Next.js, take a look at the following resources:
+To use the Spotify API, you need to create an account on the Spotify website (the streaming platform). You can use your existing account if you have one.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigate to the "documentation" section in the navigation bar and select "Web API".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+All the necessary information for using the API can be found in the "Getting Started" section. Follow the steps provided. Additional resources are available on the internet, such as YouTube tutorials and articles.
 
-## Deploy on Vercel
+Spotify API Documentation: 🌐 [https://developer.spotify.com/documentation/web-api](https://developer.spotify.com/documentation/web-api)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Functionalities
+- Navigation Bar: Allows users to search for artists. Upon submitting a search, users are redirected to the search page where the search results are displayed.
+- Search Page: Displays the most relevant X items related to the search. Pagination is implemented if there are more than X items.
+- Artist Details Page: Shows relevant data about the artist.
+- Favorites System: Users can create playlists and add/remove tracks from their favorites. Note that this data is not persisted and will be cleared upon page reload.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to explore additional ideas, such as suggesting similar artists on the artist details page or allowing users to sort search results by categories.
+
+Please note that the instructions are provided in English and should not be too lengthy.
+
