@@ -1,4 +1,4 @@
-import './loading.scss'
+import './appStyle/loading.scss'
 import Header from '@/components/Header/Header'
 
 export default function Loading() {

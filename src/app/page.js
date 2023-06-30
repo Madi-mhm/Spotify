@@ -1,5 +1,5 @@
 
-import './page.scss'
+import './appStyle/page.scss'
 import Header from '../components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import NewReleasesSection from '../components/Carousels/NewReleases';
@@ -7,6 +7,7 @@ import ArtistProfile from '@/components/ArtistProfile/ArtistProfile';
 
 
 const Home =  () =>  {
+  // throw new Error()
 
 
   return (
@@ -43,3 +44,10 @@ export default Home
 
 
 
+// function fakeLoadingFctn() {
+//   return new Promise((resolve) => {
+//       setTimeout(() => {
+//           resolve(true);
+//       }, 3000);
+//   });
+// }
