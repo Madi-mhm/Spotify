@@ -1,5 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
 .favoritesPageContainer{
-    width: 100vw;
     min-height: 100vh;
     background-color: rgb(15, 15, 15);
     color: white;
@@ -8,13 +11,14 @@
     align-items: center;
     padding: 6rem 0 3rem 0;
 
+
     .privatProfile{
         margin-bottom: 2rem;
         box-shadow: rgba(240, 240, 244, 0.2) 0px 7px 29px 0px;
         border-radius: 5px;
     }
 
-    .favoritemsItems{
+    .favoritesItems{
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -29,11 +33,18 @@
 
         }
     }
-    .favoritemsItems::-webkit-scrollbar {
+    .favoritesItems::-webkit-scrollbar {
         width: 8px; 
         
     }          
-    .favoritemsItems::-webkit-scrollbar-thumb {
+    .favoritesItems::-webkit-scrollbar-thumb {
         border-radius: 10px;
     }
+
+    .smallCardsFavoriteItems{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   
 }

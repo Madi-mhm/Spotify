@@ -2,15 +2,16 @@
 
 import ArtistProfile from "../ArtistProfile/ArtistProfile";
 import BigCards from "../Cards/BigCards";
+import SmallCards from "../Cards/SmallCards";
 import Header from "../Header/Header";
 import "./favorites.scss"
 import { Fragment, useEffect, useState } from "react";
 
 const Favorites = () =>{
 
+
+    // Get data saved data from localStorage for creating big cards
     const [getAlbumData, setGetAlbumData] = useState()
-
-
     useEffect(()=>{
         if(typeof window !== 'undefined'){
             const albumData = localStorage.getItem('songDetailsData')
@@ -18,6 +19,17 @@ const Favorites = () =>{
             setGetAlbumData(parseData)
         }
     }, [])
+
+    // Get data saved data from localStorage for creating small cards
+    const [getSmallCardsData, setGetSmallCardsData] = useState()
+    useEffect(()=>{
+        if(typeof window !== 'undefined'){
+            const cardData = localStorage.getItem('singleSongData')
+            const parseData = cardData ? JSON.parse(cardData) : []
+            setGetSmallCardsData(parseData)
+        }
+    },[])
+
 
    
     
@@ -31,7 +43,7 @@ const Favorites = () =>{
                 />
             </div>
 
-            <div className="favoritemsItems">
+            <div className="favoritesItems">
 
                 <div className="bigCardsFavoriteItems">
                     {getAlbumData &&
@@ -46,6 +58,20 @@ const Favorites = () =>{
                             />
                         </Fragment>
                     ))}
+                </div>
+
+                <div className="smallCardsFavoriteItems">
+                    {getSmallCardsData && getSmallCardsData.map((item, index) =>{
+                        return (
+                            <Fragment key={index}>
+                                <SmallCards 
+                                    artistsName={item.artistsName}
+                                    image={item.image}
+                                    songsName={item.songsName}
+                                />
+                            </Fragment>
+                        )
+                    })}
                 </div>
 
             </div>
