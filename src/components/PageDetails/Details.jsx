@@ -10,19 +10,18 @@ import { useEffect, useState } from 'react';
 
 
 const Details = (
-
     {title,
     imageUrl,
     artistName,
     releaseDate,
     tracks,
-    topTracks,
-}
+    topTracks}
     ) =>{       
         
     const [songNames, setSongNames] = useState()
-
+    const [isFavorite, setIsFavorite] = useState(false)
     const getTracks = songNames?.tracks || []
+
     useEffect(()=>{
         if(getTracks){
             setSongNames(topTracks)
@@ -33,6 +32,44 @@ const Details = (
         return item
     })
 
+    const handleHeartClick = () =>{
+        const savedData = localStorage.getItem('songDetailsData');
+        let favoriteData = savedData ? JSON.parse(savedData) : [];
+
+        const isCurrentFavorite = favoriteData.some(item => item.title === title);        
+
+        // Save the current data of SmallCards to local storage
+        if(isCurrentFavorite){
+            // Remove the data from favorites
+            
+            favoriteData = favoriteData.filter(item => item.title !== title);
+            localStorage.setItem('songDetailsData', JSON.stringify(favoriteData));
+            setIsFavorite(false);
+        }else{
+            // Save the current data to favorites
+            const songDetailsData = {
+                title: title,
+                imageUrl: imageUrl,
+                artistName: artistName,
+                releaseDate: releaseDate,
+                tracks: tracks, 
+                topTracks: topTracks
+            };
+            favoriteData.push(songDetailsData);
+            localStorage.setItem('songDetailsData', JSON.stringify(favoriteData));
+            setIsFavorite(true);
+
+        }
+        
+    }
+
+    useEffect(()=>{
+        const savedData = localStorage.getItem('songDetailsData')
+        const favoriteData = savedData ? JSON.parse(savedData) : []
+        const isCurrentFavorite = favoriteData.some(item => item.title === title)
+
+        setIsFavorite(isCurrentFavorite)
+    })
     
     return(
         <>
@@ -40,7 +77,13 @@ const Details = (
         <div className='detailsPageContainer'>
             <div className='detailsIconsContainer'>
                 <div className='detailsIcons'><BiShareAlt/></div>
-                <div className='detailsIcons'><AiOutlineHeart/></div>
+                <div className='detailsIcons' onClick={handleHeartClick} >
+                    {!isFavorite ? (
+                        <AiOutlineHeart />
+                    ) : (
+                        <AiOutlineHeart className='heartIcon' />
+                    )}
+                </div>
             </div>
             <div className='songsDetails'>
                 <div className='detailsPageImage'>

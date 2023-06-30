@@ -21,11 +21,16 @@
             font-size: 25px;
             cursor: pointer;
             transition: 200ms;
+            
 
             &:hover{
                 transform: scale(1.1);
 
             }
+        }
+
+        .heartIcon{
+            color: red;
         }
 
         @media (min-width: 840px) {
