@@ -44,7 +44,6 @@ const Favorites = () =>{
             </div>
 
             <div className="favoritesItems">
-
                 <div className="bigCardsFavoriteItems">
                     {getAlbumData &&
                       getAlbumData.map((item, index) => (

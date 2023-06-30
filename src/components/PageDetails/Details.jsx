@@ -58,7 +58,8 @@ const Details = (
                 releaseDate: releaseDate,
                 tracks: tracks, 
                 topTracks: topTracks,
-                albumId: albumId
+                albumId: albumId,
+                type: type
             };
             favoriteData.push(songDetailsData);
             localStorage.setItem('songDetailsData', JSON.stringify(favoriteData));
@@ -100,7 +101,6 @@ const Details = (
                     <p>Artist: {artistName}</p>
                     <p>{releaseDate}</p>
                     <p>{type}</p>
-                    <p>{albumId}</p>
                 </div>
                 <div className='detailsPageLikesAndduration'>
                     <p>{tracks} . Songs</p>

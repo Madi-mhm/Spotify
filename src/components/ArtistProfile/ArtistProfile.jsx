@@ -11,7 +11,7 @@ const ArtistProfile = ({name, image}) => {
         </div>
         <div className="artistProfileInofs">
             <h5>{name}</h5>
-            <p>See More</p>
+            <p>See Profile</p>
         </div>
       </div>
       

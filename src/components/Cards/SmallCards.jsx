@@ -3,14 +3,13 @@
 import './smallCards.scss'
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useState , useEffect } from 'react';
+import { useState , useEffect  } from 'react';
 
 
 
 const SmallCards = ({songsName, artistsName, image }) =>{
 
     const [isFavorite, setIsFavorite] = useState(false)
-
 
     const handleHeartClick = () => {
         const savedData = localStorage.getItem('singleSongData');
@@ -24,6 +23,9 @@ const SmallCards = ({songsName, artistsName, image }) =>{
             favoriteData = favoriteData.filter(item => item.songsName !== songsName);
             localStorage.setItem('singleSongData', JSON.stringify(favoriteData));
             setIsFavorite(false);
+            window.location.reload()
+
+
         }else{
             // Save the current data to favorites
             const singleSongData = {
@@ -32,9 +34,11 @@ const SmallCards = ({songsName, artistsName, image }) =>{
                 image: image,
             };
             favoriteData.push(singleSongData);
-            localStorage.setItem('singleSongData', JSON.stringify(favoriteData));
             setIsFavorite(true);
+            localStorage.setItem('singleSongData', JSON.stringify(favoriteData));
+
         }
+
     }
 
     // check if the currentData exist in localStorage
