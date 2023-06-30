@@ -1,6 +1,8 @@
 "use client"
 
+import ArtistProfile from "../ArtistProfile/ArtistProfile";
 import BigCards from "../Cards/BigCards";
+import Header from "../Header/Header";
 import "./favorites.scss"
 import { Fragment, useEffect, useState } from "react";
 
@@ -20,8 +22,14 @@ const Favorites = () =>{
    
     
     return (
+        <>
+        <Header/>
         <div className="favoritesPageContainer">
-            <div className="privatProfile"></div>
+            <div className="privatProfile">
+                <ArtistProfile
+                    name={"your Account name"}
+                />
+            </div>
 
             <div className="favoritemsItems">
 
@@ -42,6 +50,8 @@ const Favorites = () =>{
 
             </div>
         </div>
+        </>
+
     )
 }
 
