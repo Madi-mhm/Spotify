@@ -1,0 +1,25 @@
+.favoritesPageContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+
+    .privatProfile{
+        background-color: white;
+        width: 5rem;
+        height: 5rem;
+
+    }
+
+    .favoritesItems{
+        background-color: white;
+        width: 5rem;
+        height: 5rem;
+
+    }
+
+}

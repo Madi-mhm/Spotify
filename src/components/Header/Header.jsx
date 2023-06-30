@@ -9,7 +9,7 @@ const Header = () => {
             <div className='headerNavBar'>
                 <Link href='/search'><div className='searchIcon'></div></Link>
                 <div className='hamburgerIcon'></div>
-                <Link className='navBarLinks' href="#">Favorites</Link>
+                <Link className='navBarLinks' href="/favorites">Favorites</Link>
                 <Link className='navBarLinks' href="#">Log in</Link>
             </div>
         </div>
