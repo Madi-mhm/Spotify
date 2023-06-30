@@ -32,6 +32,8 @@ export default async function CardsDetails({ params }) {
         artistName={thisArtist.name}
         tracks={thisAlbum.tracks.total}
         topTracks={thisArtistTopTracks}
+        type={thisAlbum.type}
+        albumId={thisAlbum.id}
         />
     </div>
   );

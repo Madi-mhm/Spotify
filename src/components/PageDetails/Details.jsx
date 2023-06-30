@@ -15,7 +15,10 @@ const Details = (
     artistName,
     releaseDate,
     tracks,
-    topTracks}
+    topTracks,
+    type,
+    albumId
+    }
     ) =>{       
         
     const [songNames, setSongNames] = useState()
@@ -32,6 +35,7 @@ const Details = (
         return item
     })
 
+    // Favorite Icon
     const handleHeartClick = () =>{
         const savedData = localStorage.getItem('songDetailsData');
         let favoriteData = savedData ? JSON.parse(savedData) : [];
@@ -53,7 +57,8 @@ const Details = (
                 artistName: artistName,
                 releaseDate: releaseDate,
                 tracks: tracks, 
-                topTracks: topTracks
+                topTracks: topTracks,
+                albumId: albumId
             };
             favoriteData.push(songDetailsData);
             localStorage.setItem('songDetailsData', JSON.stringify(favoriteData));
@@ -63,6 +68,8 @@ const Details = (
         
     }
 
+
+    // check if the currentData exist in localStorage
     useEffect(()=>{
         const savedData = localStorage.getItem('songDetailsData')
         const favoriteData = savedData ? JSON.parse(savedData) : []
@@ -93,6 +100,8 @@ const Details = (
                     <h3>{title}</h3>
                     <p>Artist: {artistName}</p>
                     <p>{releaseDate}</p>
+                    <p>{type}</p>
+                    <p>{albumId}</p>
                 </div>
                 <div className='detailsPageLikesAndduration'>
                     <p>{tracks} . Songs</p>
@@ -102,7 +111,7 @@ const Details = (
                 </div>
             </div>
 
-            <div className='albumsSongs'>
+            <div className='albumsSongs' >
                 {tracksData &&
                     tracksData.map((item) => (
                         <SmallCards

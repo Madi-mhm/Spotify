@@ -15,11 +15,26 @@
 
     }
 
-    .favoritesItems{
-        background-color: white;
-        width: 5rem;
-        height: 5rem;
+    .favoritemsItems{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin-top: 2rem;
 
+        .bigCardsFavoriteItems{
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+
+        }
     }
-
+    .favoritemsItems::-webkit-scrollbar {
+        width: 8px; 
+        
+    }          
+    .favoritemsItems::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+    }
 }
