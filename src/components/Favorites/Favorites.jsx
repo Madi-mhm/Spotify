@@ -58,8 +58,9 @@ const Favorites = () =>{
                         </Fragment>
                     ))}
                 </div>
-
-                <div className="smallCardsFavoriteItems">
+            </div>
+            <div>
+            <div className="smallCardsFavoriteItems">
                     {getSmallCardsData && getSmallCardsData.map((item, index) =>{
                         return (
                             <Fragment key={index}>
@@ -72,7 +73,6 @@ const Favorites = () =>{
                         )
                     })}
                 </div>
-
             </div>
         </div>
         </>
