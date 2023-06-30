@@ -68,7 +68,6 @@ const Details = (
         
     }
 
-
     // check if the currentData exist in localStorage
     useEffect(()=>{
         const savedData = localStorage.getItem('songDetailsData')

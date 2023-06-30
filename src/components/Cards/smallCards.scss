@@ -60,6 +60,10 @@
             cursor: pointer;
             transition: 250ms;
              
+            .redHeartIcon{
+                color: red;
+            }
+
             &:hover{
                 transform: scale(1.2);
             }
